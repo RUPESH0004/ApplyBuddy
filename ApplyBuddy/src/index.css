@@ -8,3 +8,13 @@ body{
     background: linear-gradient(90deg, #FFF5E1, #FFE1E8);
 
 }
+
+#content-info {
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ gap: 10px;
+ padding: 30px;
+  }
+  
+ 
+  
