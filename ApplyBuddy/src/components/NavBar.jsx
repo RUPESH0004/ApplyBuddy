@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from '../assets/logo.jpg';
-import './NavBar.css';
-
+import './NavBar.css'
+import Button from './Button';
 const NavBar = () => {
+  function handleOnClick()
+  {
+     alert ("sign in or signup button is pressesd")
+  }
   return (<>
     <div className="MainDiv">
       <div className="logo">
@@ -14,8 +18,8 @@ const NavBar = () => {
         <button className='search-button'>Search</button>
       </div>
       <div className='login-info'>
-      <button className='login-button'>SignIn</button>
-      <button  className='login-button'>SignUp</button>
+      <Button onPress={handleOnClick}>SignIn</Button>
+      <Button onPress={handleOnClick}>SignUp</Button>
       </div>
     </div>
     </>

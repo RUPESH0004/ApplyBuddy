@@ -1,38 +1,61 @@
-
-#info-box {
-    width: 300px; /* Fixed width for the box */
-    margin: 20px auto; /* Center the box horizontally */
-    padding: 20px; /* Inner spacing */
-    border: 1px solid #ccc; /* Border for the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background-color: #f9f9f9; /* Light background color */
-    text-align: center; /* Center-align text */
+#content-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between the boxes */
+    width: 90%; /* Container width */
+    margin: 20px auto; /* Center the grid horizontally */
   }
   
-  #info-box h3 {
-    font-size: 1.5rem; /* Adjust title size */
-    margin-bottom: 10px; /* Space below the title */
-    color: #333; /* Title color */
+  .info-box {
+    display: flex;
+    flex-direction: column; /* Stack title, input, and button vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 150px; /* Adjust height as needed */
+    max-width: 100%; /* Ensures the boxes are responsive */
+    overflow-wrap: break-word; /* Break long words onto the next line */
+    word-wrap: break-word; /* Legacy support for word-breaking */
+    text-align: center; /* Center text horizontally */
+    white-space: normal; /* Allow text to wrap */
   }
   
-  #info-box p {
-    font-size: 1rem; /* Adjust paragraph size */
-    color: #666; /* Text color */
-    margin-bottom: 15px; /* Space below the paragraph */
+  .info-box h3 {
+    font-size: 24px;
+    font-weight:bolder;
+    color: #333;
+    margin: 5px 0;
+    overflow-wrap: break-word; /* Wrap long words */
+    word-wrap: break-word;
+    white-space: normal; /* Ensure the text wraps */
+  }
+  .input-div
+  {
+    width: 80%;
+    height: 50%;
+    margin-bottom: 10px;
+  }
+  .info-box input {
+    width: 80%; /* Input width relative to the box */
+    height: 10%;
+    padding: 0.8rem;
+    margin-top: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-weight: 600;
+    overflow-wrap: break-word; /* Wrap any text input */
+    white-space: normal; /* Ensure it wraps */
   }
   
-  #info-box button {
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #007bff; /* Primary button color */
-    color: white; /* Text color */
-    font-size: 1rem; /* Font size */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-  }
-  
-  #info-box button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+  .info-box input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }

@@ -1,16 +1,28 @@
-import React from 'react'
-import './infoBox.css';
-export default function InfoBox({onADD,Tittle}) {
- 
+import React, { forwardRef } from "react";
+import "./infobox.css";
+import Button from "./Button";
+
+const InfoBox = forwardRef(function InfoBox(
+  { onADD, title, onOpen, description, titleRef, descriptionRef },ref
+) {
   return (
-     <div id ="info-box">
-        <h3>
-          {!Tittle? "ADD":Tittle}
-        </h3>
-        <input type='text' onChange={(e)=>onADD(e.target.value)} className="border-none bg-transparent outline-none text-inherit font-inherit p-0 m-0 w-auto"/>
-        <br/>
-        <button>{Tittle?'Open':'ADD'}</button>
+    <div className="info-box">
+      {title ? (
+        <>
+          <h3>{title.toUpperCase()}</h3>
+          <p  style={{color:"gray", fontWeight:"lighter",}}>{description}</p>
+        </>
+      ) : (
+        <div className="input-div">
+          <input type="text" ref={titleRef} placeholder="Title" />
+          <input type="text" ref={descriptionRef} placeholder="Description" />
+        </div>
+      )}
+      <Button onPress={title ? onOpen : onADD}>
+        {title ? "Open" : "ADD"}
+      </Button>
     </div>
-   
-  )
-}
+  );
+});
+
+export default InfoBox;
