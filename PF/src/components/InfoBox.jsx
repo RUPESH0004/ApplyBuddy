@@ -18,7 +18,7 @@ const InfoBox = forwardRef(function InfoBox(
           <input type="text" ref={descriptionRef} placeholder="Description" />
         </div>
       )}
-      <Button onPress={title ? onOpen : onADD}>
+      <Button onClick={title ? onOpen : onADD}>
         {title ? "Open" : "ADD"}
       </Button>
     </div>

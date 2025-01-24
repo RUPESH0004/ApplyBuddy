@@ -23,8 +23,8 @@ const BUTTON = styled.button`
 `;
 
 // Functional component to render the button
-export const Button = ({children,onPress}) => {
-  return <BUTTON onClick={onPress}>{children}</BUTTON>;
+export const Button = ({children,onPress,...props}) => {
+  return <BUTTON {...props}>{children}</BUTTON>;
 };
 
 export default Button;

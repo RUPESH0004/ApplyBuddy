@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import NavBar from "./components/NavBar";
 import InfoBox from "./components/InfoBox";
+import { ConttentInfo } from './components/ConttentInfo';
 
 function App() {
   const [infoBoxes, setInfoBoxes] = useState([
@@ -28,20 +29,28 @@ function App() {
       }, 1000);
     }
   }
-
-  function handleOnOpen(name) {
-    alert(`The open button is clicked for ${name}`);
+  function handleOnOpen() {
+    AdditionInof;
   }
+ 
+function handleOnForm (){
+  const AdditionInof = <ConttentInfo/>
+if(title)
+{
+  handleOnOpen();
+}
+}
 
   return (
     <>
       <NavBar />
       <div id="content-info">
         {infoBoxes.map((box) => (
-          <InfoBox key={box.id} title={box.title} onOpen={() => handleOnOpen(box.title)} description={box.description} />
+          <InfoBox key={box.id} title={box.title} onOpen={() => handleOnForm()} description={box.description} />
         ))}
         <InfoBox titleRef={titleRef} onADD={handleOnAdd} descriptionRef={descriptionRef} />
       </div>
+      <div className='flex justify-center items-center '><ConttentInfo/></div>
     </>
   );
 }

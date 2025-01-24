@@ -1,4 +1,9 @@
-/* Main container styling */
+:root {
+    --comp-name-text: "Default Company"; /* Default company name */
+    --search-placeholder: "Search here..."; /* Default search placeholder */
+    --login-text: "Login"; /* Default login button text */
+}
+
 .MainDiv {
     display: flex;
     justify-content: space-between;
@@ -11,7 +16,82 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Styling for the logo */
+@media (max-width: 1024px) {
+    .MainDiv {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .Search-Bar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .login-button {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .MainDiv {
+        padding: 0.5rem;
+    }
+
+    .comp-name {
+        font-size: 1.2rem;
+    }
+
+    .search-block {
+        width: 80%;
+    }
+
+    .search-button {
+        width: 15%;
+    }
+
+    .login-button {
+        width: 6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .MainDiv {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+        width: 10rem;
+    }
+
+    .comp-name {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    .Search-Bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .search-block {
+        width: 90%;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .login-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .logo {
     display: flex;
     justify-content: center;
@@ -27,29 +107,28 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-/* Styling for the company name inside the navbar */
+
 .comp-name {
-    font-size: 1.5rem; /* Adjust the size for visibility */
-    font-weight: 700; /* Bold text for prominence */
-    font-family: 'Poppins', sans-serif; /* Modern and professional font */
-    background: linear-gradient(90deg, #7B61FF, #FF7E67); /* Gradient effect */
-    -webkit-background-clip: text; /* Clipping the gradient to the text */
-    -webkit-text-fill-color: transparent; /* Making the gradient visible */
-    text-transform: uppercase; /* Ensuring all letters are uppercase */
-    letter-spacing: 0.05rem; /* Adding slight spacing between letters */
-    text-align: center; /* Center the text */
-    margin-left: 1rem; /* Spacing from the left */
-    cursor: pointer; /* Adding a pointer cursor to indicate interactivity */
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #7B61FF, #FF7E67);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    margin-left: 1rem;
+    cursor: pointer;
     transition: transform 0.3s ease, text-shadow 0.3s ease;
+    content: var(--comp-name-text);
 }
 
 .comp-name:hover {
-    transform: scale(1.1); /* Slight zoom-in effect on hover */
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
+    transform: scale(1.1);
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Styling for the search bar */
 .Search-Bar {
     width: 70%;
     display: flex;
@@ -70,6 +149,11 @@
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+}
+
+.search-block::placeholder {
+    color: #aaa;
+    content: var(--search-placeholder);
 }
 
 .search-block:focus {
@@ -95,7 +179,6 @@
     background-color: #6453C8;
 }
 
-/* Styling for the login buttons */
 .login-button {
     width: 5rem;
     height: 2rem;
@@ -108,6 +191,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease;
+    content: var(--login-text);
 }
 
 .login-button:hover {
